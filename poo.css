@@ -1,0 +1,62 @@
+#contenedor{
+    width:50%;
+}
+.botones{
+    padding: 10px 0;
+    border: 2px;
+    border-style: dotted;
+    width: 220px;
+}
+#tabla{
+    font-size: 20px;
+border: 2px;
+width: 100%;
+border-style: dotted;
+}
+body{
+    display:flex;
+}
+h1{
+    text-align: center;
+}
+#contetabla{
+    width:50%;
+}
+    
+#titu {
+
+    float: left;
+    color: #00093b;
+    font-weight: bold;
+    width: 50%;
+}
+#cant{
+    float:right;
+    color:  #00093b;
+    font-weight:bold;
+    width: 50%;
+}
+p{
+    border: 1px solid black;
+margin: 5px 0;
+text-align: center;
+}
+.botones{
+    margin: 0 auto;
+}
+#tabla{
+    display:flex;
+}
+#titu{
+    width:50%;
+}
+#cant{
+    width:50%;
+}
+#ingresousuario{
+    border: solid 1px;
+    width: 80%
+}
+.ingreso{
+    text-align: center;
+}
