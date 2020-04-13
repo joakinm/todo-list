@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    margin: 10px 7.5%;
+    background-color: rgb(214, 214, 214);
+}
+#creadortareas{
+    width: 25%;
+    margin: 0 3%;
+}
+#contenedortareas,#tareaslistas{
+    width:30%;
+    margin: 0 3%;
+}
+h1,h2{
+    text-align: center;
+}
+#conttar{
+    border: solid 1px black;
+}
+label{
+    display:block;
+    margin:5px;
+}
+#bt{
+    margin: 20px;
+}
+.listo,.borrar{
+    float:inline-end;
+}
+.divbotones{
+    width:40%;
+}
+.divli{
+    width:60%;
+}
+.txtlista{
+    display:flex;
+}

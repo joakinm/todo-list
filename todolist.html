@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+  <script src="todolist.js"></script>
+  <link rel = "stylesheet" type = "text/css"  href = "todolist.css" />
+</head>
+<body>
+    <div id="creadortareas">
+        <h1>Agregar tareas</h1>
+        <div id=conttar>
+            <div>
+                <label>Tarea</label>
+                <input type="text" id="texttarea"></input>
+            </div>
+            <div>
+                <label>Dias</label>
+                <input type="text" id="textdias"></input>
+            </div>
+            <input type="button" onclick="Cargartarea()" value="Agregar tarea" id="bt"></input>
+        </div>
+    </div>
+
+    <div id="contenedortareas">
+        <h1>Tareas a terminar</h1>
+        <h2> nombre </h2>
+        <div class=list>
+            <ul id="listadotarea">
+
+            </ul>
+        </div>
+        
+    </div>
+    <div id="tareaslistas">
+        <h1>Tareas Terminadas</h1>
+        <h2> nombre </h2>
+        <div class="list">
+        <ul id="tlistas">
+
+        </ul>
+        </div>
+    </div>
+</body>
+</html>
