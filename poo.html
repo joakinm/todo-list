@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ejemplo de JavaScript</title>
-  <meta charset="UTF-8">
-  <script src="ejercicio1.js"></script>
-  <link rel = "stylesheet" type = "text/css"  href = "poo.css" />
-</head>
-<body>
-  <div id=contenedor> 
-    <h1>Operaciones del usuario</h1>
-    <div id="ingresousuario">
 
-      <div class="ingreso">
-        <label>ingrese titular</label> 
-        <input type="text" id="titular">
-      </div>
-      <div class="ingreso">
-        <label>ingrese monto</label> 
-        <input type="text" id="cantidad">
-      </div>
-      <div class="botones">
-        <input type="button" onclick="crear()" value="agregar">
-        <input type="button" onclick="depositar()" value="depositar">
-        <input type="button" onclick="retirar()" value="retirar">
-      </div>
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+    <script src="ejercicio1.js"></script>
+    <link rel="stylesheet" type="text/css" href="poo.css" />
+</head>
+
+<body>
+    <div id=contenedor>
+        <h1>Operaciones del usuario</h1>
+        <div id="ingresousuario">
+            <div class="ingreso">
+                <label>ingrese titular</label>
+                <input type="text" id="titular">
+            </div>
+            <div class="ingreso">
+                <label>ingrese monto</label>
+                <input type="text" id="cantidad">
+            </div>
+            <div class="botones">
+                <input type="button" onclick="crear()" value="agregar">
+                <input type="button" onclick="depositar()" value="depositar">
+                <input type="button" onclick="retirar()" value="retirar">
+            </div>
+        </div>
     </div>
-  </div>  
-  <div id="contetabla">
-    <h1>Cuentas</h1>
-    <div id="tabla">
-      <p id="titu">Titulares</p>
-      <p id="cant">Monto</p>
-  </div> 
-  </div>
-    
+    <div id="contetabla">
+        <h1>Cuentas</h1>
+        <div id="tabla">
+            <p id="titu">Titulares</p>
+            <p id="cant">Monto</p>
+        </div>
+    </div>
 </body>
+
 </html>
