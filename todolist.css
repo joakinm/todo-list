@@ -1,38 +1,48 @@
-body{
+body {
     display: flex;
     margin: 10px 7.5%;
     background-color: rgb(214, 214, 214);
 }
-#creadortareas{
+
+#creadortareas {
     width: 25%;
     margin: 0 3%;
 }
-#contenedortareas,#tareaslistas{
+
+#contenedortareas, #tareaslistas {
     width:30%;
     margin: 0 3%;
 }
-h1,h2{
+
+h1,h2 {
     text-align: center;
 }
-#conttar{
+
+#conttar {
     border: solid 1px black;
 }
-label{
+
+label {
     display:block;
     margin:5px;
 }
-#bt{
+
+#bt {
     margin: 20px;
 }
-.listo,.borrar{
+
+.listo, .borrar {
     float:inline-end;
 }
-.divbotones{
+
+.divbotones {
     width:40%;
 }
-.divli{
+
+.divli {
     width:60%;
 }
-.txtlista{
+
+.txtlista {
     display:flex;
 }

@@ -1,19 +1,18 @@
+
+let arreglo = new Array();
+let tarea;
+let dias;
+let arreglolisto = new Array();
+
 function Tarea(tarea,dias) { //set
     this.tarea = tarea;
     this.dias = dias;
   }
 
-var arreglo = new Array();
-var tarea;
-var dias;
-var arreglolisto = new Array();
-
-function yaagregado (tarea)
-{
-  var i = 0;
-  var encontrado = false ;
-  while(encontrado == false && i < arreglo.length)
-  {
+function yaagregado (tarea) {
+  let i = 0;
+  let encontrado = false ;
+  while(encontrado == false && i < arreglo.length) {
     if (arreglo[i].tarea == tarea)
     {
       encontrado = true;
@@ -26,113 +25,106 @@ function yaagregado (tarea)
   return encontrado;
 }
 
-function Cargartareas()
-  {
-    tarea = document.getElementById("texttarea").value;
-    dias = document.getElementById("textdias").value;
+function Cargartareas() {
+    tarea = document.getElementById('texttarea').value;
+    dias = document.getElementById('textdias').value;
   }
 
-function  Cargartarea()
-{
+function  Cargartarea() {
     Cargartareas();
-    if (tarea !="" && dias != "")
+    if (tarea != '' && dias != '')
     {
-        if(isNaN(dias) == false)
+        if(isNaN(dias) === false)
         {
-            if (yaagregado(tarea) == false)
+            if (yaagregado(tarea) === false)
             {
-                var t = new Tarea(tarea,dias);
+                const t = new Tarea(tarea, dias);
                 arreglo.push(t);
                 refrescartabla();
             }
             else 
-                {alert("ya se encuentra cargada")}
+                {alert('ya se encuentra cargada')}
         }
         else
         {
-        alert("hay caracteres que no son numeros");
-        document.getElementById("textdias").value = "";
+        alert('hay caracteres que no son numeros');
+        document.getElementById('textdias').value = '';
         }
     }
     else
-    {alert("hay un campo vacio")}
+    {alert('hay un campo vacio')}
 }
 
-function borrar(i)
-{
-    arreglo.splice(i,1);
+function borrar(i) {
+    arreglo.splice(i, 1);
     refrescartabla();
 }
-function lista(i)
-{
-    var t = new Tarea(arreglo[i].tarea,arreglo[i].dias);
+
+function lista(i) {
+    const t = new Tarea(arreglo[i].tarea, arreglo[i].dias);
     arreglolisto.push(t);
-    arreglo.splice(i,1)
+    arreglo.splice(i, 1)
     refrescartabla();
 }
-function refrescartabla()
-{
-  var i;
-  var j;
-  document.getElementById("listadotarea").innerHTML = "";
-  for (i=0; i<arreglo.length; i++)
+function refrescartabla() {
+  let contador;
+  document.getElementById('listadotarea').innerHTML = '';
+  for (contador=0; contador<arreglo.length; contador++)
   {
-    var parrafo = document.createElement('li');
-    var texto = document.createTextNode(arreglo[i].tarea + " - "+ arreglo[i].dias);
-    parrafo.setAttribute("class","txtlista");
+    let parrafo = document.createElement('li');
+    const texto = document.createTextNode(arreglo[contador].tarea + ' - ' + arreglo[contador].dias);
+    parrafo.setAttribute('class', 'txtlista');
     
-    var divTexto = document.createElement('div');
-    divTexto.setAttribute("class","divli");
+    let divTexto = document.createElement('div');
+    divTexto.setAttribute('class', 'divli');
     parrafo.appendChild(divTexto);
     divTexto.appendChild(texto);
-    document.getElementById("listadotarea").appendChild(parrafo);
+    document.getElementById('listadotarea').appendChild(parrafo);
     
-    var divBotones = document.createElement('div');
-    divBotones.setAttribute("class","divbotones");
+    let divBotones = document.createElement('div');
+    divBotones.setAttribute('class', 'divbotones');
     parrafo.appendChild(divBotones);
     //parrafo
-    var boton = document.createElement("Button");
-    var txt = document.createTextNode("X");
-    boton.className = "borrar";
-    boton.setAttribute("id","btborrar"+i);
+    let boton = document.createElement('Button');
+    const txtCerrar = document.createTextNode('X');
+    boton.className = 'borrar';
+    boton.setAttribute('id', 'btborrar' + contador);
 
     boton.onclick = function(i)
     {
-        arreglo.splice(i,1);
+        arreglo.splice(i, 1);
         refrescartabla();
     };//operacion borrar
 
-    boton.appendChild(txt);
+    boton.appendChild(txtCerrar);
     divBotones.appendChild(boton);
   
     //boton de borrar
-    var boton = document.createElement("Button");
-    var txt = document.createTextNode("Tarea lista");
-    boton.setAttribute("id","btlisto"+i);
-    boton.setAttribute("name",i);
+    boton = document.createElement('Button');
+    const txtTareaLista = document.createTextNode('Tarea lista');
+    boton.setAttribute('id', 'btlisto' + contador);
+    boton.setAttribute('name' , contador);
     boton.onclick = function(i)
     {
-        var t = (arreglo[event.currentTarget.name].tarea + '  -  '+ arreglo[event.currentTarget.name].dias);
+        const t = (arreglo[event.currentTarget.name].tarea + '  -  '+ arreglo[event.currentTarget.name].dias);
         arreglolisto.push(t);
-        arreglo.splice(event.currentTarget.name,1);
+        arreglo.splice(event.currentTarget.name, 1);
         refrescartabla();
         refrescartlista()
     };//operacion tarea lista
-    boton.className = "listo";
-    boton.appendChild(txt);
+    boton.className = 'listo';
+    boton.appendChild(txtTareaLista);
     divBotones.appendChild(boton);
     //boton de listo
   }
 }
 
-function refrescartlista()
-{
-    document.getElementById("tlistas").innerHTML = "";
-    for (i=0; i<arreglolisto.length; i++)
-    {
-        var parrafo = document.createElement('li');
-        var texto = document.createTextNode(arreglolisto[i]);
+function refrescartlista() {
+    document.getElementById('tlistas').innerHTML = '';
+    for (i=0; i<arreglolisto.length; i++) {
+        let parrafo = document.createElement('li');
+        const texto = document.createTextNode(arreglolisto[i]);
         parrafo.appendChild(texto);
-        document.getElementById("tlistas").appendChild(parrafo);
+        document.getElementById('tlistas').appendChild(parrafo);
     }
 }
